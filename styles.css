@@ -17,10 +17,9 @@
 }
 
 body {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
   padding: 2rem;
   font-family: var(--ff-base);
   font-size: 1rem;
@@ -29,13 +28,19 @@ body {
   color: var(--clr-neutral-100);
   background: 
     var(--clr-primary-500) url("images/bg-mobile.svg") 
-    center top / contain no-repeat;
+    center top / 100% no-repeat;
 }
 
 h1 {
   font-family: var(--ff-accent);
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   color: var(--clr-neutral-100);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .logo-img {
@@ -51,15 +56,15 @@ h1 {
   margin-top: 3.5rem;
 }
 
-.content {
+.content-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   text-align: center;
   margin-top: 4rem;
 }
 
-.content p {
+.content-container p {
   margin-top: 1rem;
 }
 
@@ -69,7 +74,6 @@ h1 {
   align-items: center;
   width: 100%;
   max-width: 12.5rem;
-  margin: 0 auto;
   margin-top: 1.5rem;
   padding: 0.8rem;
   background-color: var(--clr-neutral-100);
@@ -88,16 +92,15 @@ h1 {
   color: var(--clr-neutral-100);
 }
 
-.socials {
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.75rem;
-  margin: 0 auto;
   margin-top: 4rem;
 }
 
-.socials a {
+footer a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,35 +115,35 @@ h1 {
   transition: 0.2s;
 }
 
-.socials a:focus-visible, 
-.socials a:hover {
+footer a:focus-visible, 
+footer a:hover {
   color: var(--clr-primary-300);
   border-color: var(--clr-primary-300);
 }
 
 @media only screen and (min-width: 62.5em) {
   body {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 3rem;
     padding: 3.5rem 4.5rem;
     background-image: url("images/bg-desktop.svg");
-    background-position: top left;
+    background-position: left top;
+    background-size: auto;
   }
   
   .mockup-img {
     width: 50vw;
     max-width: 45rem;
-    margin-top: 5rem;
+    margin-top: 5.5rem;
   }
   
   main {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
   }
   
-  .content {
+  .content-container {
+    align-items: flex-start;
     margin-top: clamp(5rem, 12vw, 12rem);
     text-align: left;
   }
@@ -150,13 +153,13 @@ h1 {
     font-size: 1.1rem;
   }
   
-  .socials {
-    margin: 0;
+  footer {
+    gap: 1rem;
     margin-top: auto;
     margin-left: auto;
   }
   
-  .socials a {
+  footer a {
     width: 2.5rem;
     height: 2.5rem;
     font-size: 1rem;
