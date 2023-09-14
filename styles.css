@@ -126,7 +126,7 @@ footer a:hover {
     padding: 3.5rem 4.5rem;
     background-image: url("images/bg-desktop.svg");
     background-position: left top;
-    background-size: auto;
+    background-size: auto 100%;
   }
   
   .mockup-img {
